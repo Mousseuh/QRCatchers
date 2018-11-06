@@ -57,6 +57,8 @@
     display: block; }
   
   body {
+    background-image: url(https://picography.co/wp-content/uploads/2018/10/picography-sunlight-trough-trees-wood-forest-trail-bright-light-green-brown.jpg);
+    background-size:cover;
     margin: 0;
     font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     font-size: 1rem;
