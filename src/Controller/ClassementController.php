@@ -17,6 +17,10 @@ class ClassementController extends AbstractController
     {
         return $this->render('page/classement.html.twig');
     }
-   
+    public function classementJoueur($id,$pseudo,$score,$rang)
+    {
+            $classement = $this->getDoctrine();
+            
+    }
     
 }
