@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Entity\Joueur;
+use App\Entity\Utilisateur;
 
 class ClassementController extends AbstractController
 {
@@ -17,10 +17,13 @@ class ClassementController extends AbstractController
     {
         return $this->render('page/classement.html.twig');
     }
-    public function classementJoueur($id,$pseudo,$score,$rang)
+        /**
+     * @Route("/classement", name="classement")
+     */
+    public function classementJoueur()
     {
-            $classement = $this->getDoctrine();
-            
-    }
-    
+        $repository = $this->getDoctrine()->getRepository(Utilisateur::class);
+        $ListeUtilisateur = $repository->ListeUtilisateur();
+        return $this->render('page/classement.html.twig' ,['ListeUtilisateur' => $ListeUtilisateur]);
+    }  
 }

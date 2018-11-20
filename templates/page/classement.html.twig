@@ -2,26 +2,27 @@
 
 {% block content %}
 
-
+  
+    <tr>
       <div class="py-5">
     <div class="container">
       <div class="row align-items-center" style="">
-        <div class="col-md-2 border-dark rounded-top rounded-left border bg-info" style=""><p class="text-center my-0"><i class="fa d-inline Example of trophy fa-trophy fa-2x"> </i> Rang</p>  </div>
-        <div class="col-md-2 border-dark rounded-top border bg-info"> <p class="text-center my-0"> <i class="fa d-inline Example of trophy fa-2x fa-user"></i> Score </p> </div>
-        <div class="col-md-2 border-dark rounded-top border bg-info"> <p class="text-center my-0"> <i class="fa d-inline Example of trophy fa-2x fa-heart" > </i> Pseudo </p> </div>
-        <div class="col-md-2 border-dark rounded-top border bg-info"> <p class="text-center my-0"> <i class="fa d-inline Example of trophy fa-2x fa-question" ></i> Rang </p> </div>
-        <div class="col-md-2 border-dark rounded-top border bg-info"> <p class="text-center my-0"> <i class="fa d-inline Example of trophy fa-2x fa-question" ></i> Rang </p> </div>
-        <div class="col-md-2 border-dark rounded-top rounded-right border bg-info"> <p class="text-center my-0"> <i class="fa d-inline Example of trophy fa-2x fa-question" ></i> Rang </p> </div>
+        <div class="col-md-4 border-dark rounded-top rounded-left border bg-info" style=""><p class="text-center my-0"><i class="fa d-inline Example of trophy fa-trophy fa-2x"> </i> Rang</p>  </div>
+        <div class="col-md-4 border-dark rounded-top border bg-info"> <p class="text-center my-0"> <i class="fa d-inline Example of trophy fa-2x fa-user" > </i> Pseudo </p> </div>
+        <div class="col-md-4 border-dark rounded-top border bg-info"> <p class="text-center my-0"> <i class="fa d-inline Example of trophy fa-2x fa-heart"></i> Score </p> </div>
+        
       </div>
       <div class="row  border rounded-left rounded-right rounded-bottom border-warning">
-        <div class="col-md-2 border-warning border bg-light"></div>
-        <div class="col-md-2 border-warning border bg-light"></div>
-        <div class="col-md-2 border-warning border bg-light"></div>
-        <div class="col-md-2 border-warning border bg-light"></div>
-        <div class="col-md-2 border-warning border bg-light"></div>
-        <div class="col-md-2 border-warning border bg-light"></div>
+      {% set rang = 1 %}
+         {% for Utilisateur in ListeUtilisateur %}
+        <div class="col-md-4 border-warning border bg-light"> {{ rang }}</div>
+        <div class="col-md-4 border-warning border bg-light">{{ Utilisateur.Pseudo }}</div>
+        <div class="col-md-4 border-warning border bg-light">{{ Utilisateur.score }}</div>
+      {% set rang = rang + 1 %}
+          {% endfor %}
       </div>
     </div>
   </div>
+
 
 {% endblock %}
